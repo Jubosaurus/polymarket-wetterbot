@@ -23,3 +23,6 @@ auswertungen/*.json
 
 # Obsidian-Arbeitsdateien
 .obsidian/
+
+# Rückrechnung: lokale Zwischenspeicher (groß, jederzeit neu ladbar)
+daten/cache/
