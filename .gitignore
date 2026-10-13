@@ -1,0 +1,20 @@
+# Umgebung
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Schlüssel und Geheimnisse: niemals einchecken
+.env
+.env.*
+*.key
+*.pem
+*secret*
+*wallet*
+*keystore*
+
+# Rohdaten und Ergebnisse bleiben lokal (nur .gitkeep wird verfolgt)
+daten/*
+!daten/.gitkeep
+auswertungen/*.csv
+auswertungen/*.json
