@@ -6,8 +6,13 @@ Eigenständiges Projekt, **völlig getrennt vom Memecoin-Bot**. Den Memecoin-Ord
 
 - **Nur Papierhandel.** Keine Wallet, keine privaten Schlüssel, keine Signatur, kein Senden von Orders, keine authentifizierten Polymarket-Endpunkte. Es werden nur öffentliche, lesende APIs genutzt (Gamma, CLOB-Lesen, Open-Meteo, IEM).
 - Keine Schlüssel, keine `.env`, keine Zugangsdaten im Repo (siehe `.gitignore`). Brauchen wir je einen API-Schlüssel, kommt er aus einer Umgebungsvariable und nie ins Repo.
-- Phase 0 enthält **keinen Handels-Bot und keine Zeitpläne** (kein Cron, keine Dauerschleife, kein Hintergrunddienst).
-- **Speicher ist knapp:** alles nacheinander ausführen, keine parallelen Hintergrundläufe, keine großen Rohdaten-Downloads ohne Rückfrage. Daten liegen in `daten/` (nicht im Git).
+- **Kein Handels-Bot, keine Wetten.** Einziger Zeitplan ist der GitHub-Actions-Workflow `.github/workflows/protokoll.yml` (Live-Protokoll, nur Sammeln). Sonst kein Cron, keine Dauerschleife, kein Hintergrunddienst.
+- **Speicher ist knapp:** alles nacheinander ausführen, keine parallelen Hintergrundläufe, keine großen Rohdaten-Downloads ohne Rückfrage. Protokolldaten liegen in `daten/` (vom Workflow eingecheckt); lokale Phase-0-Dateien (`daten/maerkte.csv`) nicht.
+
+## Wissensablage (Pflicht)
+
+- `wissen/` ist ein eigener Obsidian-Vault (Aufbau: `wissen/LIESMICH.md`, Schreibregeln: `wissen/REGELN.md`).
+- **Jede Entscheidung und jede Erkenntnis kommt ins Wiki (`wissen/wiki/…`) und als Zeile in `wissen/log.md`**, im selben Commit wie die Änderung. Neue Seiten in `wissen/index.md` eintragen und verlinken. Gemessenes und Vermutetes trennen.
 
 ## Testregeln
 
@@ -24,9 +29,9 @@ Eigenständiges Projekt, **völlig getrennt vom Memecoin-Bot**. Den Memecoin-Ord
 
 ## Aufbau
 
-- `bot/` Module: `stationen.py` (Stadt -> Station/Zeitzone/Rundung), `buckets.py` (Parser, Rundung, Wahrscheinlichkeit), `maerkte.py` (aktive Märkte -> `daten/maerkte.csv`), `wetter.py` (Ensemble -> Wahrscheinlichkeit je Bucket), `netz.py` (HTTP mit Wiederholung).
-- `daten/` lokale CSV (nicht im Git). `auswertungen/` Prüf- und Analyseskripte. `docs/` Dokumentation (`machbarkeit.md`). `tests/` pytest.
-- Aufruf: `python -m bot.maerkte`, danach `python -m bot.wetter`.
+- `bot/` Module: `stationen.py` (Stadt -> Station/Zeitzone/Rundung), `buckets.py` (Parser, Rundung, Wahrscheinlichkeit), `maerkte.py` (aktive Märkte -> `daten/maerkte.csv`), `wetter.py` (Phase-0-Ensemble -> Wahrscheinlichkeit), `ensemble.py`, `aufloesung.py`, `speicher.py`, `protokoll.py` (Live-Protokoll), `netz.py` (HTTP mit Wiederholung).
+- `daten/JJJJ-MM-TT/` Protokolldaten (csv.gz) und `daten/zustand.json`, werden vom Workflow eingecheckt; Format in `docs/protokoll.md`. `auswertungen/` Prüf- und Analyseskripte. `docs/` Dokumentation (`machbarkeit.md`, `gebuehren.md`, `protokoll.md`). `tests/` pytest.
+- Aufruf: `python -m bot.protokoll` (ein Protokoll-Lauf), `python -m bot.maerkte` / `python -m bot.wetter` (Phase 0, lokale CSV).
 
 ## Wissenswertes zur Auflösung (Details in docs/machbarkeit.md)
 

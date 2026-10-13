@@ -1,0 +1,72 @@
+name: Live-Protokoll
+
+# Nur Protokoll: Marktpreise, Ensemble-Vorhersagen, Auflösung. Keine Wetten, keine Schlüssel.
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+# Nie zwei Läufe gleichzeitig; ein wartender Lauf wird nicht abgebrochen.
+concurrency:
+  group: protokoll
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  lauf:
+    runs-on: ubuntu-latest
+    # Das Programm hält intern eine Frist von 11 Minuten ein (bot/protokoll.py: ZEITBUDGET_S),
+    # damit Einrichtung, Commit und Push sicher in die 15 Minuten passen.
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Abhängigkeiten
+        run: pip install -r requirements.txt
+
+      - name: Protokoll-Lauf
+        run: python -m bot.protokoll
+
+      # Auch nach einem fehlgeschlagenen Lauf einchecken, damit das Laufzeit-Log die Lücke zeigt.
+      # Konflikte: Die Daten-Dateien entstehen nur in diesem Workflow (concurrency), Konflikte sind
+      # daher unwahrscheinlich. Falls doch, gewinnt der Stand dieses Laufs (-X theirs beim Rebase
+      # bedeutet: der eigene, wiederaufgespielte Commit) und ein hängender Rebase wird abgebrochen.
+      - name: Daten einchecken
+        id: einchecken
+        if: always()
+        run: |
+          git config user.name "protokoll-bot"
+          git config user.email "protokoll-bot@users.noreply.github.com"
+          git add daten
+          if git diff --cached --quiet; then
+            echo "Nichts zu committen"
+            exit 0
+          fi
+          git commit -q -m "Protokoll $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
+          for i in 1 2 3 4; do
+            if git pull --rebase -X theirs -q origin main && git push -q origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((i * 5))
+          done
+          echo "Push fehlgeschlagen" >&2
+          exit 1
+
+      # Letzte Sicherung: schlägt der Push fehl, bleiben die Rohdaten dieses Laufs 14 Tage als Artefakt erhalten.
+      - name: Daten sichern (nur bei Fehler)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daten-${{ github.run_id }}
+          path: daten
+          retention-days: 14

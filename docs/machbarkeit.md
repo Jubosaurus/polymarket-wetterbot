@@ -99,7 +99,7 @@ Der Median-Spread ist nur über Buckets mit Preis 3–97 % gerechnet (bei Randbu
 - **Enddatum im System:** `endDate` ist 12:00 UTC des Zieltages und hat mit dem echten Handelsschluss nichts zu tun: Die Märkte werden erst aufgelöst, wenn der Folgetag in der Quelle erscheint.
 - Niederschlag: NWS-CLI-Bericht der Stadt, lokale Standardzeit (nicht Sommerzeit), `T` (Spur) zählt nicht, Bericht bis 14:00 ET am Folgetag, sonst „Nein“.
 - Stationswechsel in der Historie (aus den Auflösungstexten): **Paris LFPG → LFPB (ab April 2026), Denver KDEN → KBKF (März/April 2026), Hong Kong zeitweise VHHH (März 2026).** Eine Rückrechnung muss die Station je Event aus dem Text lesen.
-- **Gebühren:** Wettermärkte haben `feesEnabled` mit `feeType: weather_fees`, `rate 0.05`, nur Taker (`takerOnly`), `rebateRate 0.25` für Maker. Die genaue Formel ist nicht aus den Marktdaten allein ableitbar und muss vor einer Rentabilitätsrechnung nachgesehen werden (nicht verifiziert).
+- **Gebühren:** Wettermärkte haben `feesEnabled` mit `feeType: weather_fees`, `rate 0.05`, nur Taker (`takerOnly`), `rebateRate 0.25` für Maker. Offizielle Formel: `fee = C × feeRate × p × (1 − p)`, Wetter-Rate 0,05, nur Taker. Details und Quellen: [gebuehren.md](gebuehren.md).
 - Mindestgröße 5 Anteile; Tick 0,001 bei Preisen unter etwa 0,04 bzw. über 0,96, sonst 0,01.
 
 ## 1b) Polymarket-Preise
@@ -191,4 +191,4 @@ Zusätzliche Fallstricke für die Rückrechnung:
 1. **Sofort (klein, billig): Live-Protokoll als reines Sammeln** (kein Handel). Pro Lauf `maerkte.py` + `wetter.py` mit `--anhaengen`, und zusätzlich die Roh-Ensembles speichern. Begründung: Echte Ensemble-Vorhersagen lassen sich **nicht** nachträglich beschaffen. Jeder Tag ohne Protokoll ist für immer verloren. (Dafür bräuchte es einen Zeitplan; der ist in Phase 0 ausdrücklich ausgeschlossen und sollte erst nach Freigabe kommen.)
 2. **Rückrechnung als erste Auswertung** auf einer Stichprobe: ca. 10–15 Städte (je Einheit und Klimazone gemischt) × März bis Oktober, ein Preispunkt je Markt zu einem festen Zeitpunkt (z. B. 24 h vor Tagesende), Previous-Runs-Vorhersage plus gelernte Fehlerverteilung. Ergebnis in wenigen Tagen. Sie zeigt, ob das Verfahren überhaupt eine Kante gegen den Marktpreis nach Spread und Gebühr hat. Nur wenn ja, lohnt der Aufwand für Live-Papierhandel.
 
-Offene Punkte vor Phase 1: Gebührenformel nachschlagen; restliche März-Abweichungen (WU-Ära) klären; Hong-Kong-Archiv (HKO-Open-Data lieferte für Sep 2026 noch keine Monatsdaten, August ja) in die Rückrechnung einbauen oder ausklammern.
+Offene Punkte vor Phase 1: restliche März-Abweichungen (WU-Ära) klären; Hong-Kong-Archiv (HKO-Open-Data lieferte für Sep 2026 noch keine Monatsdaten, August ja) in die Rückrechnung einbauen oder ausklammern.

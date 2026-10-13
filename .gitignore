@@ -13,8 +13,13 @@ __pycache__/
 *wallet*
 *keystore*
 
-# Rohdaten und Ergebnisse bleiben lokal (nur .gitkeep wird verfolgt)
-daten/*
-!daten/.gitkeep
+# Protokolldaten (daten/JJJJ-MM-TT/ und zustand.json) werden bewusst eingecheckt (GitHub Actions).
+# Nur lokale Zwischenstände bleiben draußen:
+daten/maerkte.csv
+daten/wahrscheinlichkeiten.csv
+*.tmp
 auswertungen/*.csv
 auswertungen/*.json
+
+# Obsidian-Arbeitsdateien
+.obsidian/

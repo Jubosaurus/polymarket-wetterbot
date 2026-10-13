@@ -26,7 +26,8 @@ SPALTEN = [
     "abruf_utc", "event_slug", "markt_id", "stadt", "station", "quelle", "art", "datum",
     "einheit", "rundung", "bucket", "bucket_lo", "bucket_hi", "token_yes", "preis_mitte",
     "bid", "ask", "spread", "ask_groesse", "liquiditaet", "volumen", "tick", "min_groesse",
-    "fee_rate", "ende_utc",
+    "bid_groesse", "letzter_preis", "buch_zeit_ms",
+    "fees_aktiv", "fee_typ", "fee_rate", "fee_exponent", "fee_nur_taker", "fee_rebate", "ende_utc",
 ]
 
 
@@ -59,12 +60,15 @@ def hole_buecher(tokens: list[str]) -> dict[str, dict]:
         for b in post_json(CLOB_BOOKS, [{"token_id": t} for t in teil]):
             bids = [(float(x["price"]), float(x["size"])) for x in b.get("bids", [])]
             asks = [(float(x["price"]), float(x["size"])) for x in b.get("asks", [])]
-            bid = max(bids)[0] if bids else None
+            bid_p = max(bids) if bids else None
             ask_p = min(asks) if asks else None
             out[b["asset_id"]] = {
-                "bid": bid,
+                "bid": bid_p[0] if bid_p else None,
+                "bid_groesse": bid_p[1] if bid_p else None,
                 "ask": ask_p[0] if ask_p else None,
                 "ask_groesse": ask_p[1] if ask_p else None,
+                "letzter_preis": _zahl(b.get("last_trade_price")),
+                "buch_zeit_ms": b.get("timestamp"),
                 "tick": _zahl(b.get("tick_size")),
                 "min_groesse": _zahl(b.get("min_order_size")),
             }
@@ -121,7 +125,7 @@ def zeilen_aus_events(events: list[dict], abruf: datetime, buecher: dict | None,
                 buch = {}
                 bid, ask = _zahl(m.get("bestBid")), _zahl(m.get("bestAsk"))
             spread = round(ask - bid, 4) if bid is not None and ask is not None else None
-            fee = (m.get("feeSchedule") or {}).get("rate")
+            fs = m.get("feeSchedule") or {}
             zeilen.append({
                 "abruf_utc": abruf.isoformat(timespec="seconds"),
                 "event_slug": ev["slug"], "markt_id": m.get("conditionId", ""),
@@ -134,7 +138,11 @@ def zeilen_aus_events(events: list[dict], abruf: datetime, buecher: dict | None,
                 "liquiditaet": _zahl(m.get("liquidityNum")), "volumen": _zahl(m.get("volumeNum")),
                 "tick": buch.get("tick", _zahl(m.get("orderPriceMinTickSize"))),
                 "min_groesse": buch.get("min_groesse", _zahl(m.get("orderMinSize"))),
-                "fee_rate": fee, "ende_utc": ev["endDate"],
+                "bid_groesse": buch.get("bid_groesse"), "letzter_preis": buch.get("letzter_preis", _zahl(m.get("lastTradePrice"))),
+                "buch_zeit_ms": buch.get("buch_zeit_ms"),
+                "fees_aktiv": m.get("feesEnabled"), "fee_typ": m.get("feeType"), "fee_rate": fs.get("rate"),
+                "fee_exponent": fs.get("exponent"), "fee_nur_taker": fs.get("takerOnly"),
+                "fee_rebate": fs.get("rebateRate"), "ende_utc": ev["endDate"],
             })
     return zeilen
 

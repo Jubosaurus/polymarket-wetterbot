@@ -1,4 +1,4 @@
-from auswertungen.validiere_aufloesung import station_aus_event
+from bot.aufloesung import station_aus_event
 
 
 def test_station_je_event_nicht_aus_heutiger_tabelle():
