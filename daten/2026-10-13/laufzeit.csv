@@ -1,0 +1,2 @@
+lauf_start_utc,lauf_ende_utc,dauer_s,luecke_min,status,events,maerkte,neue_stammzeilen,ensemble_modelle_neu,ensemble_stationen_ok,ensemble_fehler,om_anfragen,om_gewicht,om_gewicht_heute,om_meta_anfragen,wahrscheinlichkeiten,aufloesung_neu,aufloesung_abweichungen,aufloesung_offen,daten_mb,git_pack_mb,fehler
+2026-10-13T21:06:19Z,2026-10-13T21:08:20Z,121.5,,OK,337,2767,2767,ecmwf_ifs025+gfs025+icon_seamless+gem_global,49,0,49,196,196,5,2585,585,2,12,0.374,0.09,
