@@ -14,7 +14,7 @@ tags: [stadt]
 |---|---|
 | Polymarket-Kennung | `kuala-lumpur` |
 | Station | **WMKK** |
-| Koordinaten (Open-Meteo-Abruf) | 2.7167, 101.7 |
+| Koordinaten (Open-Meteo-Abruf) | 2.747, 101.714 (korrigiert 2026-10-14, vorher 2.7167, 101.7: 3.7 km daneben, siehe [[Stationsprüfung]]) |
 | Auflösungsquelle | NOAA (weather.gov/wrh/timeseries), seit 2026-08-23; vorher Weather Underground |
 | Einheit | °C (1-°C-Buckets, z. B. `27°C`) |
 | Rundung | kaufmännisch runden (x,5 nach oben) auf ganze Grad |

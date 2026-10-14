@@ -31,3 +31,17 @@ Größter Median-Spread aller Städte (0,155) und damit teuer zu handeln; Zeitzo
 ## Siehe auch
 
 [[Rundung und Auflösung]] · [[Zeitzonen und lokaler Tag]] · [[METAR (IEM)]] · [[Open-Meteo]] · [[Städteübersicht]]
+
+<!-- rueckrechnung -->
+## Rückrechnung (Phase 1b)
+
+Eine der 15 Städte mit der längsten Markthistorie. Fehlerverteilung je Station, Vorlauf und Art aus 490 Tagen (Mär–Okt 2024 und 2025), nicht gepoolt. Hauptregel-Wetten dieser Stadt (Kante ≥ 0,10, Spread 0,04, 10 $ je Wette; Summe nach Kosten in $):
+
+| Gruppe | Wetten | Summe ($) |
+|---|---|---|
+| Vorlauf 1, Finden | 116 | -51 |
+| Vorlauf 1, Bestätigen | 238 | +68 |
+| Vorlauf 2, Finden | 75 | +142 |
+| Vorlauf 2, Bestätigen | 192 | +582 |
+
+Einzelergebnisse sind klein und rauschbehaftet; maßgeblich ist das Gesamturteil **Verwerfen**, siehe [[Rückrechnung]].

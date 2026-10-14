@@ -14,7 +14,7 @@ tags: [stadt]
 |---|---|
 | Polymarket-Kennung | `qingdao` |
 | Station | **ZSQD** |
-| Koordinaten (Open-Meteo-Abruf) | 36.0667, 120.3333 |
+| Koordinaten (Open-Meteo-Abruf) | 36.362, 120.087 (korrigiert 2026-10-14, vorher 36.0667, 120.3333: 39.6 km daneben, siehe [[Stationsprüfung]]) |
 | Auflösungsquelle | NOAA (weather.gov/wrh/timeseries), seit 2026-08-23; vorher Weather Underground |
 | Einheit | °C (1-°C-Buckets, z. B. `27°C`) |
 | Rundung | kaufmännisch runden (x,5 nach oben) auf ganze Grad |

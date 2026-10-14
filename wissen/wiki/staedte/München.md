@@ -14,7 +14,7 @@ tags: [stadt]
 |---|---|
 | Polymarket-Kennung | `munich` |
 | Station | **EDDM** – Flughafen München |
-| Koordinaten (Open-Meteo-Abruf) | 48.3583, 11.8092 |
+| Koordinaten (Open-Meteo-Abruf) | 48.348, 11.813 (korrigiert 2026-10-14, vorher 48.3583, 11.8092: 1.2 km daneben, siehe [[Stationsprüfung]]) |
 | Auflösungsquelle | NOAA (weather.gov/wrh/timeseries), seit 2026-08-23; vorher Weather Underground |
 | Einheit | °C (1-°C-Buckets, z. B. `27°C`) |
 | Rundung | kaufmännisch runden (x,5 nach oben) auf ganze Grad |

@@ -14,7 +14,7 @@ tags: [stadt]
 |---|---|
 | Polymarket-Kennung | `san-francisco` |
 | Station | **KSFO** |
-| Koordinaten (Open-Meteo-Abruf) | 37.619, -122.3749 |
+| Koordinaten (Open-Meteo-Abruf) | 37.61961, -122.36561 (korrigiert 2026-10-14, vorher 37.619, -122.3749: 0.8 km daneben, siehe [[Stationsprüfung]]) |
 | Auflösungsquelle | NOAA (weather.gov/wrh/timeseries), seit 2026-08-23; vorher Weather Underground |
 | Einheit | °F (2-°F-Buckets, z. B. `68-69°F`) |
 | Rundung | kaufmännisch runden (x,5 nach oben) auf ganze Grad |

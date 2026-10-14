@@ -14,7 +14,7 @@ tags: [stadt]
 |---|---|
 | Polymarket-Kennung | `shanghai` |
 | Station | **ZSPD** – Pudong |
-| Koordinaten (Open-Meteo-Abruf) | 31.1167, 121.7667 |
+| Koordinaten (Open-Meteo-Abruf) | 31.146, 121.8 (korrigiert 2026-10-14, vorher 31.1167, 121.7667: 4.5 km daneben, siehe [[Stationsprüfung]]) |
 | Auflösungsquelle | NOAA (weather.gov/wrh/timeseries), seit 2026-08-23; vorher Weather Underground |
 | Einheit | °C (1-°C-Buckets, z. B. `27°C`) |
 | Rundung | kaufmännisch runden (x,5 nach oben) auf ganze Grad |

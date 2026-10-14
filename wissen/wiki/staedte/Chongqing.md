@@ -14,7 +14,7 @@ tags: [stadt]
 |---|---|
 | Polymarket-Kennung | `chongqing` |
 | Station | **ZUCK** |
-| Koordinaten (Open-Meteo-Abruf) | 29.52, 106.48 |
+| Koordinaten (Open-Meteo-Abruf) | 29.718, 106.639 (korrigiert 2026-10-14, vorher 29.52, 106.48: 26.9 km daneben, siehe [[Stationsprüfung]]) |
 | Auflösungsquelle | NOAA (weather.gov/wrh/timeseries), seit 2026-08-23; vorher Weather Underground |
 | Einheit | °C (1-°C-Buckets, z. B. `27°C`) |
 | Rundung | kaufmännisch runden (x,5 nach oben) auf ganze Grad |

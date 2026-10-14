@@ -14,7 +14,7 @@ tags: [stadt]
 |---|---|
 | Polymarket-Kennung | `beijing` |
 | Station | **ZBAA** – Beijing Capital |
-| Koordinaten (Open-Meteo-Abruf) | 40.0741, 116.587 |
+| Koordinaten (Open-Meteo-Abruf) | 40.082, 116.603 (korrigiert 2026-10-14, vorher 40.0741, 116.587: 1.6 km daneben, siehe [[Stationsprüfung]]) |
 | Auflösungsquelle | NOAA (weather.gov/wrh/timeseries), seit 2026-08-23; vorher Weather Underground |
 | Einheit | °C (1-°C-Buckets, z. B. `27°C`) |
 | Rundung | kaufmännisch runden (x,5 nach oben) auf ganze Grad |

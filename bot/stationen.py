@@ -2,7 +2,9 @@
 
 Quelle der Zuordnung: Auflösungstexte der aktiven Polymarket-Wettermärkte
 (Stand 2026-10-13, siehe docs/machbarkeit.md). Koordinaten stammen aus dem
-IEM-ASOS-Stationsverzeichnis. Hong Kong wird vom Hong Kong Observatory (HKO)
+Stationsverzeichnis von aviationweather.gov (stationinfo; das IEM-Verzeichnis führt bei mehreren
+chinesischen Stationen veraltete Stadtkoordinaten). Korrigiert 2026-10-14, siehe
+wissen/wiki/werkzeuge/Stationsprüfung.md. Hong Kong wird vom Hong Kong Observatory (HKO)
 aufgelöst, nicht von einem Flughafen-METAR; die Koordinaten sind die des HKO-
 Hauptquartiers.
 """
@@ -30,23 +32,23 @@ STATIONEN: dict[str, Station] = dict([
     _s("ankara", "LTAC", "Europe/Istanbul", 40.1281, 32.9951),
     _s("atlanta", "KATL", "America/New_York", 33.6301, -84.4418),
     _s("austin", "KAUS", "America/Chicago", 30.183, -97.6799),
-    _s("beijing", "ZBAA", "Asia/Shanghai", 40.0741, 116.587),
+    _s("beijing", "ZBAA", "Asia/Shanghai", 40.082, 116.603),
     _s("buenos-aires", "SAEZ", "America/Argentina/Buenos_Aires", -34.8222, -58.5358),
     _s("busan", "RKPK", "Asia/Seoul", 35.1795, 128.9382),
     _s("cape-town", "FACT", "Africa/Johannesburg", -33.9667, 18.6),
-    _s("chengdu", "ZUUU", "Asia/Shanghai", 30.6667, 104.0167),
+    _s("chengdu", "ZUUU", "Asia/Shanghai", 30.576, 103.95),
     _s("chicago", "KORD", "America/Chicago", 41.9602, -87.9316),
-    _s("chongqing", "ZUCK", "Asia/Shanghai", 29.52, 106.48),
-    _s("dallas", "KDAL", "America/Chicago", 32.8471, -96.8518),
-    _s("denver", "KBKF", "America/Denver", 39.7017, -104.7517),
-    _s("guangzhou", "ZGGG", "Asia/Shanghai", 23.3964, 113.3008),
-    _s("helsinki", "EFHK", "Europe/Helsinki", 60.3172, 24.9633),
+    _s("chongqing", "ZUCK", "Asia/Shanghai", 29.718, 106.639),
+    _s("dallas", "KDAL", "America/Chicago", 32.83836, -96.83584),
+    _s("denver", "KBKF", "America/Denver", 39.713, -104.758),
+    _s("guangzhou", "ZGGG", "Asia/Shanghai", 23.392, 113.307),
+    _s("helsinki", "EFHK", "Europe/Helsinki", 60.327, 24.957),
     _s("hong-kong", "HKO", "Asia/Hong_Kong", 22.3025, 114.1744, "HKO"),
-    _s("houston", "KHOU", "America/Chicago", 29.6375, -95.2824),
+    _s("houston", "KHOU", "America/Chicago", 29.64582, -95.28214),
     _s("istanbul", "LTFM", "Europe/Istanbul", 41.2629, 28.7413),
-    _s("jeddah", "OEJN", "Asia/Riyadh", 21.6598, 39.1222),
-    _s("karachi", "OPKC", "Asia/Karachi", 24.8456, 67.1614),
-    _s("kuala-lumpur", "WMKK", "Asia/Kuala_Lumpur", 2.7167, 101.7),
+    _s("jeddah", "OEJN", "Asia/Riyadh", 21.685, 39.166),
+    _s("karachi", "OPKC", "Asia/Karachi", 24.902, 67.139),
+    _s("kuala-lumpur", "WMKK", "Asia/Kuala_Lumpur", 2.747, 101.714),
     _s("london", "EGLC", "Europe/London", 51.5053, 0.0553),
     _s("los-angeles", "KLAX", "America/Los_Angeles", 33.9382, -118.3865),
     _s("lucknow", "VILK", "Asia/Kolkata", 26.7606, 80.8893),
@@ -56,17 +58,17 @@ STATIONEN: dict[str, Station] = dict([
     _s("miami", "KMIA", "America/New_York", 25.788, -80.3169),
     _s("milan", "LIMC", "Europe/Rome", 45.63, 8.7231),
     _s("moscow", "UUWW", "Europe/Moscow", 55.5915, 37.2615),
-    _s("munich", "EDDM", "Europe/Berlin", 48.3583, 11.8092),
+    _s("munich", "EDDM", "Europe/Berlin", 48.348, 11.813),
     _s("nyc", "KLGA", "America/New_York", 40.7794, -73.8803),
-    _s("panama-city", "MPMG", "America/Panama", 8.9833, -79.5167),
+    _s("panama-city", "MPMG", "America/Panama", 8.967, -79.555),
     _s("paris", "LFPB", "Europe/Paris", 48.9672, 2.4272),
-    _s("qingdao", "ZSQD", "Asia/Shanghai", 36.0667, 120.3333),
-    _s("san-francisco", "KSFO", "America/Los_Angeles", 37.619, -122.3749),
+    _s("qingdao", "ZSQD", "Asia/Shanghai", 36.362, 120.087),
+    _s("san-francisco", "KSFO", "America/Los_Angeles", 37.61961, -122.36561),
     _s("sao-paulo", "SBGR", "America/Sao_Paulo", -23.4321, -46.4695),
     _s("seattle", "KSEA", "America/Los_Angeles", 47.4447, -122.3144),
     _s("seoul", "RKSI", "Asia/Seoul", 37.4667, 126.45),
-    _s("shanghai", "ZSPD", "Asia/Shanghai", 31.1167, 121.7667),
-    _s("shenzhen", "ZGSZ", "Asia/Shanghai", 22.6323, 113.8056),
+    _s("shanghai", "ZSPD", "Asia/Shanghai", 31.146, 121.8),
+    _s("shenzhen", "ZGSZ", "Asia/Shanghai", 22.639, 113.803),
     _s("singapore", "WSSS", "Asia/Singapore", 1.3667, 103.9833),
     _s("taipei", "RCSS", "Asia/Taipei", 25.0694, 121.5517, "WU"),
     _s("tel-aviv", "LLBG", "Asia/Jerusalem", 32.0114, 34.8867),
@@ -74,5 +76,5 @@ STATIONEN: dict[str, Station] = dict([
     _s("toronto", "CYYZ", "America/Toronto", 43.6772, -79.6306),
     _s("warsaw", "EPWA", "Europe/Warsaw", 52.1628, 20.9611),
     _s("wellington", "NZWN", "Pacific/Auckland", -41.3272, 174.8053),
-    _s("wuhan", "ZHHH", "Asia/Shanghai", 30.62, 114.13),
+    _s("wuhan", "ZHHH", "Asia/Shanghai", 30.783, 114.205),
 ])

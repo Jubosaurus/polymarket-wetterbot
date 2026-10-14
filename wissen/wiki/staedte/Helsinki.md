@@ -14,7 +14,7 @@ tags: [stadt]
 |---|---|
 | Polymarket-Kennung | `helsinki` |
 | Station | **EFHK** |
-| Koordinaten (Open-Meteo-Abruf) | 60.3172, 24.9633 |
+| Koordinaten (Open-Meteo-Abruf) | 60.327, 24.957 (korrigiert 2026-10-14, vorher 60.3172, 24.9633: 1.1 km daneben, siehe [[Stationsprüfung]]) |
 | Auflösungsquelle | NOAA (weather.gov/wrh/timeseries), seit 2026-08-23; vorher Weather Underground |
 | Einheit | °C (1-°C-Buckets, z. B. `27°C`) |
 | Rundung | kaufmännisch runden (x,5 nach oben) auf ganze Grad |

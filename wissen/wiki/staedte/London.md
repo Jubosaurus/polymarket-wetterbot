@@ -31,3 +31,17 @@ Station ist **London City Airport (EGLC)**, nicht Heathrow. Vorhersagetest: Bias
 ## Siehe auch
 
 [[Rundung und Auflösung]] · [[Zeitzonen und lokaler Tag]] · [[METAR (IEM)]] · [[Open-Meteo]] · [[Städteübersicht]]
+
+<!-- rueckrechnung -->
+## Rückrechnung (Phase 1b)
+
+Eine der 15 Städte mit der längsten Markthistorie. Fehlerverteilung je Station, Vorlauf und Art aus 490 Tagen (Mär–Okt 2024 und 2025), nicht gepoolt. Hauptregel-Wetten dieser Stadt (Kante ≥ 0,10, Spread 0,04, 10 $ je Wette; Summe nach Kosten in $):
+
+| Gruppe | Wetten | Summe ($) |
+|---|---|---|
+| Vorlauf 1, Finden | 197 | -562 |
+| Vorlauf 1, Bestätigen | 326 | -817 |
+| Vorlauf 2, Finden | 141 | -80 |
+| Vorlauf 2, Bestätigen | 292 | -489 |
+
+Einzelergebnisse sind klein und rauschbehaftet; maßgeblich ist das Gesamturteil **Verwerfen**, siehe [[Rückrechnung]].

@@ -14,7 +14,7 @@ tags: [stadt]
 |---|---|
 | Polymarket-Kennung | `wuhan` |
 | Station | **ZHHH** |
-| Koordinaten (Open-Meteo-Abruf) | 30.62, 114.13 |
+| Koordinaten (Open-Meteo-Abruf) | 30.783, 114.205 (korrigiert 2026-10-14, vorher 30.62, 114.13: 19.5 km daneben, siehe [[Stationsprüfung]]) |
 | Auflösungsquelle | NOAA (weather.gov/wrh/timeseries), seit 2026-08-23; vorher Weather Underground |
 | Einheit | °C (1-°C-Buckets, z. B. `27°C`) |
 | Rundung | kaufmännisch runden (x,5 nach oben) auf ganze Grad |

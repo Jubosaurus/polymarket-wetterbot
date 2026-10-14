@@ -14,7 +14,7 @@ tags: [stadt]
 |---|---|
 | Polymarket-Kennung | `denver` |
 | Station | **KBKF** – Buckley Space Force Base (Aurora) |
-| Koordinaten (Open-Meteo-Abruf) | 39.7017, -104.7517 |
+| Koordinaten (Open-Meteo-Abruf) | 39.713, -104.758 (korrigiert 2026-10-14, vorher 39.7017, -104.7517: 1.4 km daneben, siehe [[Stationsprüfung]]) |
 | Auflösungsquelle | NOAA (weather.gov/wrh/timeseries), seit 2026-08-23; vorher Weather Underground |
 | Einheit | °F (2-°F-Buckets, z. B. `68-69°F`) |
 | Rundung | kaufmännisch runden (x,5 nach oben) auf ganze Grad |
