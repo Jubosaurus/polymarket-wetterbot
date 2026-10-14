@@ -1,25 +1,27 @@
 {
- "aufloesung_letzte": "2026-10-13T21:06:19+00:00",
+ "aufloesung_letzte": "2026-10-14T10:34:11+00:00",
  "aufloesung_offen": {
   "highest-temperature-in-hong-kong-on-october-10-2026": "2026-10-10",
   "highest-temperature-in-hong-kong-on-october-11-2026": "2026-10-11",
   "highest-temperature-in-hong-kong-on-october-12-2026": "2026-10-12",
+  "highest-temperature-in-hong-kong-on-october-13-2026": "2026-10-13",
   "highest-temperature-in-hong-kong-on-october-7-2026": "2026-10-07",
   "highest-temperature-in-hong-kong-on-october-8-2026": "2026-10-08",
   "highest-temperature-in-hong-kong-on-october-9-2026": "2026-10-09",
   "lowest-temperature-in-hong-kong-on-october-10-2026": "2026-10-10",
   "lowest-temperature-in-hong-kong-on-october-11-2026": "2026-10-11",
   "lowest-temperature-in-hong-kong-on-october-12-2026": "2026-10-12",
+  "lowest-temperature-in-hong-kong-on-october-13-2026": "2026-10-13",
   "lowest-temperature-in-hong-kong-on-october-7-2026": "2026-10-07",
   "lowest-temperature-in-hong-kong-on-october-8-2026": "2026-10-08",
   "lowest-temperature-in-hong-kong-on-october-9-2026": "2026-10-09"
  },
- "letzter_start": "2026-10-14T05:08:22+00:00",
+ "letzter_start": "2026-10-14T10:34:11+00:00",
  "modelle": {
   "ecmwf_ifs025": "2026-10-13T18:00Z",
-  "gem_global": "2026-10-13T12:00Z",
-  "gfs025": "2026-10-13T18:00Z",
-  "icon_seamless": "2026-10-14T00:00Z~"
+  "gem_global": "2026-10-14T00:00Z",
+  "gfs025": "2026-10-14T00:00Z",
+  "icon_seamless": "2026-10-14T06:00Z~"
  },
  "versuche": {}
 }
