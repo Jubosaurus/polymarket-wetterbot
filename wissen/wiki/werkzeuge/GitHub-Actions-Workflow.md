@@ -21,4 +21,9 @@ Datei `.github/workflows/protokoll.yml`.
 - **Maßnahme:** Start auf ungerade Minuten (7 und 37) verlegt. Wirkung steht aus und wird an der Lückenverteilung der nächsten Tage gemessen.
 - **Vorschlag, nicht umgesetzt:** externer Auslöser (cron-job.org ruft `workflow_dispatch` über die GitHub-API auf, feingranulares Token nur für dieses Repo, nur „Actions: write“). `concurrency` verhindert Doppelläufe, wenn beide Auslöser parallel laufen. Abwägung steht im Gesprächsprotokoll vom 2026-10-14; Entscheidung beim Projektinhaber.
 
+## Offene Punkte (zurückgestellt, 2026-10-14)
+
+- **Zieltag überall aus dem Slug** (`...-on-april-15-2026`), `eventDate`/`endDate` nur noch zum Abgleich: in `bot/maerkte.py` (`_datum`, heute `eventDate`, sonst `endDate[:10]`), im Ensemble-Abruf (Zuordnung über den Stamm) und in `bot/aufloesung.py` (heute `endDate[:10]`). Beobachtet ist der Fehler im Protokoll nicht (0 von 328 Events, alle mit `eventDate`; siehe `auswertungen/2026-10-14_zieltag_zaehlung.md`), es ist ein Rückfallrisiko und Aufräumen.
+- **Umsetzung gemeinsam mit der nächsten Workflow-Änderung**, die ohnehin einen Review braucht (z. B. externer Auslöser, siehe oben), damit es nur einen Review gibt. Vorher dem Nutzer sagen, ab wann es gilt und ob `auswertungen/live_start.txt` verschoben werden muss (nach heutigem Stand nicht nötig).
+
 Siehe [[Live-Protokoll]], [[Einspielregeln]].

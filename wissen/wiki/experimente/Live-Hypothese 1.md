@@ -28,7 +28,7 @@ stand: 2026-10-14
 
 Der Text lässt offen, ob die Tiefe vor oder nach der Wahl der zwei größten Kanten geprüft wird. Das Skript wählt zuerst die zwei größten Kanten und prüft danach die Tiefe; eine Wette ohne Tiefe entfällt ersatzlos (vorsichtigere Auslegung). Der Zählstand führt die Ausfälle mit (`ohne_tiefe_…`).
 
-**Zieltag:** aus dem Slug (`...-on-april-15-2026`), nicht aus dem Datum im Stamm; das Protokoll nimmt bei fehlendem `eventDate` das `endDate`, das bei einzelnen Events einen Tag später liegt (Fund des gemeinsamen Codex-Reviews, behoben, Test vorhanden). Abweichungen stehen im Zählstand (`zieltag_weicht_vom_stamm_ab`); für solche Events fehlt das Ensemble des richtigen Tages, sie entfallen dann als „zu wenig Modelle“.
+**Zieltag:** aus dem Slug (`...-on-april-15-2026`), nicht aus dem Datum im Stamm; das Protokoll nimmt bei fehlendem `eventDate` das `endDate`, das bei einzelnen Events einen Tag später liegt (Fund des gemeinsamen Codex-Reviews, behoben, Test vorhanden). Abweichungen stehen im Zählstand (`zieltag_weicht_vom_stamm_ab`); für solche Events fehlt das Ensemble des richtigen Tages, sie entfallen dann als „zu wenig Modelle“. **Zählung 2026-10-14:** 0 von 274 aktiven und 0 von 328 Protokoll-Events weichen ab (alle haben `eventDate`); der Ensemble-Abruf enthält 3 lokale Tage und damit den richtigen Tag. Der Fehler ist also ein Rückfallrisiko, kein beobachteter Datenfehler (Bericht `auswertungen/2026-10-14_zieltag_zaehlung.md`).
 
 ## Bekannte Schwächen (vorab genannt)
 
