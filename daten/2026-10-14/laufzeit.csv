@@ -1,0 +1,2 @@
+lauf_start_utc,lauf_ende_utc,dauer_s,luecke_min,status,events,maerkte,neue_stammzeilen,ensemble_modelle_neu,ensemble_stationen_ok,ensemble_fehler,om_anfragen,om_gewicht,om_gewicht_heute,om_meta_anfragen,wahrscheinlichkeiten,aufloesung_neu,aufloesung_abweichungen,aufloesung_offen,daten_mb,git_pack_mb,fehler
+2026-10-14T00:29:18Z,2026-10-14T00:31:13Z,115.0,203.0,OK,310,2459,2459,gfs025+icon_seamless,49,0,49,98,98,5,2409,,,,0.676,0.45,
