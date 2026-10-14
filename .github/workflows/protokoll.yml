@@ -3,7 +3,7 @@ name: Live-Protokoll
 # Nur Protokoll: Marktpreise, Ensemble-Vorhersagen, Auflösung. Keine Wetten, keine Schlüssel.
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "7,37 * * * *"
   workflow_dispatch:
 
 # Nie zwei Läufe gleichzeitig; ein wartender Lauf wird nicht abgebrochen.
