@@ -16,3 +16,5 @@ stand: 2026-10-13
 Fallstricke: Zeitabgleich der Vorhersage mit dem Preis, kleine Marktgrößen (Median ca. 1 400 $ Liquidität je Bucket), Auswahlverzerrung (der Markt kennt dieselben Modelle), Tiefstwerte erst seit 15.4.2026, Stationswechsel ([[Stationswechsel]]), Gebühren ([[Gebühren in der Auswertung]]).
 
 Beschluss (2026-10-13): **zuerst Live-Protokoll, danach Rückrechnung** ([[Live-Protokoll]]).
+
+**Ergebnis (2026-10-14):** Die Rückrechnung wurde durchgeführt, Urteil **Verwerfen** für das deterministische Verfahren: [[Rückrechnung]].

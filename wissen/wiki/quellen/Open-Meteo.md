@@ -25,3 +25,5 @@ Wetter-APIs ohne Schlüssel, frei nur **nicht-kommerziell**. Limits laut Preisse
 - Historical Forecast (`historical-forecast-api…`): best_match und GFS ab 2022, ICON/GEM/UKMO ab 2024, ECMWF ab 2025.
 
 Güte: [[Vorhersagegüte Previous Runs]]. Siehe auch [[Ensemble und deterministische Vorhersage]].
+- **Interpolation (gemessen 2026-10-14):** ECMWF IFS 0.25° ist nativ 3-stündlich; die Stundenwerte dazwischen sind Catmull-Rom-Interpolationen über vier Stützstellen (a−3 h, a, a+3 h, a+6 h), 14 696 von 14 696 Stunden stimmen auf ≤ 0,08 °C. Ein Stundenwert hängt damit von Läufen bis zu 6 h später ab als seine Stunde. `gfs_seamless` ist stündlich nativ. Für Look-ahead-Prüfungen müssen alle Stützstellen verfügbar sein. [[Rückrechnung]]
+

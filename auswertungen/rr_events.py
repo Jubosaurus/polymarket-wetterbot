@@ -25,6 +25,9 @@ def schlank(ev: dict) -> dict:
     return {
         "slug": ev["slug"], "art": m.group(1), "stadt": m.group(2), "ende": ev["endDate"],
         "start": ev.get("startDate"), "quelle": ev.get("resolutionSource") or "",
+        # Fragetext für das unabhängige Zieldatum der Gegenrechnung ("on April 15?" / "on 15 Apr '26")
+        "titel": ev.get("title") or "", "frage": (ev["markets"][0].get("question") or "") if ev.get("markets") else "",
+        "beschr": (ev.get("description") or "")[:400],
         "text_station": _station_text(ev),
         "maerkte": [{"titel": k.get("groupItemTitle"), "token": json.loads(k["clobTokenIds"])[0],
                      "preise": k.get("outcomePrices"), "volumen": k.get("volumeNum")}
