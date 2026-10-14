@@ -26,3 +26,6 @@ auswertungen/*.json
 
 # Rückrechnung: lokale Zwischenspeicher (groß, jederzeit neu ladbar)
 daten/cache/
+
+# Stationskorrektur für die Live-Hypothese 1 (festgeschriebene Konstanten, Kalibrierung 2024-2025)
+!auswertungen/live_bias.json
