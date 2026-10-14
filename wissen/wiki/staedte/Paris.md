@@ -30,7 +30,7 @@ tags: [stadt]
 
 ## Siehe auch
 
-[[Rundung und Auflösung]] · [[Zeitzonen und lokaler Tag]] · [[METAR (IEM)]] · [[Open-Meteo]] · [[Städteübersicht]]
+[[spaetere_pruefpunkte]] (Fall CDG, April 2026: Manipulation einer Station, Wechsel auf LFPB) · [[Rundung und Auflösung]] · [[Zeitzonen und lokaler Tag]] · [[METAR (IEM)]] · [[Open-Meteo]] · [[Städteübersicht]]
 
 <!-- rueckrechnung -->
 ## Rückrechnung (Phase 1b)

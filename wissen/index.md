@@ -8,7 +8,7 @@ Alle Seiten dieses Vaults. Aufbau: [[LIESMICH]] · Schreibregeln: [[REGELN]] · 
 
 ## Städte
 
-Übersicht: [[Städteübersicht]]. Einzelseiten (49): [[Amsterdam]] · [[Ankara]] · [[Atlanta]] · [[Austin]] · [[Buenos Aires]] · [[Busan]] · [[Chengdu]] · [[Chicago]] · [[Chongqing]] · [[Dallas]] · [[Denver]] · [[Dschidda]] · [[Guangzhou]] · [[Helsinki]] · [[Hongkong]] · [[Houston]] · [[Istanbul]] · [[Kapstadt]] · [[Karatschi]] · [[Kuala Lumpur]] · [[London]] · [[Los Angeles]] · [[Lucknow]] · [[Madrid]] · [[Mailand]] · [[Manila]] · [[Mexiko-Stadt]] · [[Miami]] · [[Moskau]] · [[München]] · [[New York City]] · [[Panama-Stadt]] · [[Paris]] · [[Peking]] · [[Qingdao]] · [[San Francisco]] · [[Schanghai]] · [[Seattle]] · [[Seoul]] · [[Shenzhen]] · [[Singapur]] · [[São Paulo]] · [[Taipeh]] · [[Tel Aviv]] · [[Tokio]] · [[Toronto]] · [[Warschau]] · [[Wellington]] · [[Wuhan]]
+Übersicht: [[Städteübersicht]]. Einzelseiten (49): [[Amsterdam]] · [[Ankara]] · [[Atlanta]] · [[Austin]] · [[Buenos Aires]] · [[Busan]] · [[Chengdu]] · [[Chicago]] · [[Chongqing]] · [[Dallas]] · [[Denver]] · [[Dschidda]] · [[Guangzhou]] · [[Helsinki]] · [[Hongkong]] · [[Houston]] · [[Istanbul]] · [[Kapstadt]] · [[Karatschi]] · [[Kuala Lumpur]] · [[London]] · [[Los Angeles]] · [[Lucknow]] · [[Madrid]] · [[Mailand]] · [[Manila]] · [[Mexiko-Stadt]] · [[Miami]] · [[Moskau]] · [[München]] · [[New York City]] · [[Panama-Stadt]] · [[Paris]] · [[Peking]] · [[Qingdao]] · [[San Francisco]] · [[Seattle]] · [[Seoul]] · [[Shanghai]] · [[Shenzhen]] · [[Singapur]] · [[São Paulo]] · [[Taipeh]] · [[Tel Aviv]] · [[Tokio]] · [[Toronto]] · [[Warschau]] · [[Wellington]] · [[Wuhan]]
 
 ## Quellen
 
@@ -53,5 +53,6 @@ Alle Seiten dieses Vaults. Aufbau: [[LIESMICH]] · Schreibregeln: [[REGELN]] · 
 - [[Machbarkeit Phase 0]]
 - [[Rundung und Auflösung]]
 - [[Rückrechnung Machbarkeit]]
+- [[spaetere_pruefpunkte]]
 - [[Stationswechsel]]
 - [[Zeitzonen und lokaler Tag]]

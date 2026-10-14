@@ -8,7 +8,7 @@ rundung: kaufm
 quelle: NOAA
 tags: [stadt]
 ---
-# Schanghai
+# Shanghai
 
 | Eigenschaft | Wert |
 |---|---|

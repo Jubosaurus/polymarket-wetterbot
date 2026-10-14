@@ -37,6 +37,10 @@ stand: 2026-10-14
 
 Alle anderen Stationen liegen unter 0,5 km und blieben unverändert. **Hong Kong** (HKO) hat keinen Flughafen-METAR; die Tabellenkoordinate ist das Observatorium am Tsim Sha Tsui, die Rasterhöhe dort 18 m. Es gibt dafür keine METAR-Messreihe, deshalb keine Stationskorrektur (siehe [[Live-Hypothese 1]]).
 
+## Unabhängiger Handabgleich
+
+Ein manueller Stationscheck vom 14.10. (alle 49 Codes mit Polymarket verglichen: sie stimmen) hat die großen Abweichungen **ZUCK, ZHHH, ZUUU, OPKC und ZSQD** unabhängig von dieser Prüfung bestätigt.
+
 ## Betroffene Städte der Rückrechnung
 
 Keine der 15 Städte der [[Rückrechnung]] ist von einer Korrektur betroffen: Die Rückrechnung holte die Koordinaten nicht aus `bot/stationen.py`, sondern aus dem IEM-Verzeichnis (`daten/cache/koordinaten.json`); für die 15 Städte (16 Stationen) liegen diese höchstens **1,8 km** (Dallas, Rasterhöhe 144 statt 146 m) neben der Referenz, sonst unter 0,5 km. Chongqing, Wuhan, Chengdu, Karachi, Qingdao, Shanghai und Hong Kong gehören nicht zu den 15. Die Rückrechnung wurde deshalb **nicht** neu gerechnet. Offen bleibt der Einfluss von Dallas (1,8 km, 2 m Rasterhöhe) auf das Ergebnis; er dürfte weit unter dem liegen, was das Urteil trägt.
@@ -47,4 +51,4 @@ Keine der 15 Städte der [[Rückrechnung]] ist von einer Korrektur betroffen: Di
 - **Live-Protokoll:** Die Ensemble-Abrufe nutzen `station.lat/lon`; alle Läufe bis zum Einspielen dieser Korrektur wurden für die genannten Städte am falschen Punkt abgerufen (nicht für die 15). Sie bleiben im Archiv, werden aber für die [[Live-Hypothese 1]] nicht gewertet (`auswertungen/live_start.txt`).
 - Städte, die inzwischen nicht mehr gehandelt werden (Jinan ZSJN, Zhengzhou ZHCC; letzte Events 2026-09-29 bzw. 10-01), stehen nicht in der Tabelle und wurden nicht aufgenommen.
 
-Siehe [[Städteübersicht]], [[Open-Meteo]], [[Bot-Module]].
+Siehe [[Städteübersicht]], [[Open-Meteo]], [[Bot-Module]], [[spaetere_pruefpunkte]].

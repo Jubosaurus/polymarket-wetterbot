@@ -44,7 +44,7 @@ tags: [stadt]
 | [[Peking]] | ZBAA | °C | NOAA | Höchst+Tiefst |
 | [[Qingdao]] | ZSQD | °C | NOAA | Höchst+Tiefst |
 | [[San Francisco]] | KSFO | °F | NOAA | Höchst+Tiefst |
-| [[Schanghai]] | ZSPD | °C | NOAA | Höchst+Tiefst |
+| [[Shanghai]] | ZSPD | °C | NOAA | Höchst+Tiefst |
 | [[Seattle]] | KSEA | °F | NOAA | Höchst+Tiefst |
 | [[Seoul]] | RKSI | °C | NOAA | Höchst+Tiefst |
 | [[Shenzhen]] | ZGSZ | °C | NOAA | Höchst+Tiefst |
