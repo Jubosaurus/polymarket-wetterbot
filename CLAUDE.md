@@ -6,7 +6,7 @@ Eigenständiges Projekt, **völlig getrennt vom Memecoin-Bot**. Den Memecoin-Ord
 
 - **Nur Papierhandel.** Keine Wallet, keine privaten Schlüssel, keine Signatur, kein Senden von Orders, keine authentifizierten Polymarket-Endpunkte. Es werden nur öffentliche, lesende APIs genutzt (Gamma, CLOB-Lesen, Open-Meteo, IEM).
 - Keine Schlüssel, keine `.env`, keine Zugangsdaten im Repo (siehe `.gitignore`). Brauchen wir je einen API-Schlüssel, kommt er aus einer Umgebungsvariable und nie ins Repo.
-- **Kein Handels-Bot, keine Wetten.** Einziger Zeitplan ist der GitHub-Actions-Workflow `.github/workflows/protokoll.yml` (Live-Protokoll, nur Sammeln). Sonst kein Cron, keine Dauerschleife, kein Hintergrunddienst.
+- **Kein Handels-Bot, keine Wetten.** Einziger Zeitplan ist der Workflow `.github/workflows/protokoll.yml` (Live-Protokoll, nur Sammeln). **Haupttakt: externer Auslöser** (cron-job.org ruft `workflow_dispatch` per GitHub-API zu :07/:37 auf, Anleitung `docs/externer_ausloeser.md`); der GitHub-Cron ist nur Rückfall. Das Fein-Token (nur dieses Repo, nur „Actions: Read and write“, 90 Tage) liegt **ausschließlich bei cron-job.org**, nie im Repo/Chat/Dateien; Ablauf rechtzeitig erneuern. Sonst kein Cron, keine Dauerschleife, kein Hintergrunddienst.
 - **Speicher ist knapp:** alles nacheinander ausführen, keine parallelen Hintergrundläufe, keine großen Rohdaten-Downloads ohne Rückfrage. Protokolldaten liegen in `daten/` (vom Workflow eingecheckt); lokale Phase-0-Dateien (`daten/maerkte.csv`) nicht.
 
 ## Wissensablage (Pflicht)
