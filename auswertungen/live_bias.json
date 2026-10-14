@@ -1,5 +1,14 @@
 {
- "quelle": "auswertungen/rueckrechnung.py rechnen (Kalibrierung 2024-03..10, 2025-03..10)",
+ "quelle": "auswertungen/live_bias.py rechnen (Kalibrierung 2024-03..10, 2025-03..10, korrigierte Koordinaten bot/stationen.py)",
+ "stand": "2026-10-14",
+ "min_tage": 300,
+ "ausgeschlossen": [
+  {
+   "station": "HKO",
+   "stadt": "hong-kong",
+   "grund": "Auflösung durch das Hong Kong Observatory, keine METAR-Messreihe"
+  }
+ ],
  "bias": {
   "CYYZ|V1|hoechst": {
    "bias": -0.1281,
@@ -22,6 +31,54 @@
   "CYYZ|V2|tiefst": {
    "bias": 0.5494,
    "sd": 1.3612,
+   "n": 490,
+   "einheit": "C"
+  },
+  "EDDM|V1|hoechst": {
+   "bias": 0.9944,
+   "sd": 1.5847,
+   "n": 490,
+   "einheit": "C"
+  },
+  "EDDM|V1|tiefst": {
+   "bias": -1.4239,
+   "sd": 1.9976,
+   "n": 490,
+   "einheit": "C"
+  },
+  "EDDM|V2|hoechst": {
+   "bias": 0.861,
+   "sd": 1.7379,
+   "n": 490,
+   "einheit": "C"
+  },
+  "EDDM|V2|tiefst": {
+   "bias": -1.4236,
+   "sd": 2.0422,
+   "n": 490,
+   "einheit": "C"
+  },
+  "EFHK|V1|hoechst": {
+   "bias": 0.9344,
+   "sd": 1.5357,
+   "n": 490,
+   "einheit": "C"
+  },
+  "EFHK|V1|tiefst": {
+   "bias": -0.7422,
+   "sd": 1.7832,
+   "n": 490,
+   "einheit": "C"
+  },
+  "EFHK|V2|hoechst": {
+   "bias": 0.9433,
+   "sd": 1.7395,
+   "n": 490,
+   "einheit": "C"
+  },
+  "EFHK|V2|tiefst": {
+   "bias": -0.6438,
+   "sd": 1.9063,
    "n": 490,
    "einheit": "C"
   },
@@ -49,6 +106,78 @@
    "n": 490,
    "einheit": "C"
   },
+  "EHAM|V1|hoechst": {
+   "bias": 0.4374,
+   "sd": 1.0828,
+   "n": 490,
+   "einheit": "C"
+  },
+  "EHAM|V1|tiefst": {
+   "bias": -0.3595,
+   "sd": 1.2148,
+   "n": 490,
+   "einheit": "C"
+  },
+  "EHAM|V2|hoechst": {
+   "bias": 0.4256,
+   "sd": 1.2295,
+   "n": 490,
+   "einheit": "C"
+  },
+  "EHAM|V2|tiefst": {
+   "bias": -0.3212,
+   "sd": 1.2753,
+   "n": 490,
+   "einheit": "C"
+  },
+  "EPWA|V1|hoechst": {
+   "bias": 0.1342,
+   "sd": 1.3894,
+   "n": 490,
+   "einheit": "C"
+  },
+  "EPWA|V1|tiefst": {
+   "bias": -1.3883,
+   "sd": 1.6214,
+   "n": 490,
+   "einheit": "C"
+  },
+  "EPWA|V2|hoechst": {
+   "bias": 0.049,
+   "sd": 1.5954,
+   "n": 490,
+   "einheit": "C"
+  },
+  "EPWA|V2|tiefst": {
+   "bias": -1.4183,
+   "sd": 1.7003,
+   "n": 490,
+   "einheit": "C"
+  },
+  "FACT|V1|hoechst": {
+   "bias": 0.0894,
+   "sd": 1.5136,
+   "n": 490,
+   "einheit": "C"
+  },
+  "FACT|V1|tiefst": {
+   "bias": -0.7324,
+   "sd": 1.7788,
+   "n": 490,
+   "einheit": "C"
+  },
+  "FACT|V2|hoechst": {
+   "bias": 0.0049,
+   "sd": 1.6306,
+   "n": 490,
+   "einheit": "C"
+  },
+  "FACT|V2|tiefst": {
+   "bias": -0.7518,
+   "sd": 1.8271,
+   "n": 490,
+   "einheit": "C"
+  },
   "KATL|V1|hoechst": {
    "bias": 0.5209,
    "sd": 2.7761,
@@ -73,15 +202,63 @@
    "n": 490,
    "einheit": "F"
   },
+  "KAUS|V1|hoechst": {
+   "bias": -0.6909,
+   "sd": 2.932,
+   "n": 490,
+   "einheit": "F"
+  },
+  "KAUS|V1|tiefst": {
+   "bias": -2.3552,
+   "sd": 3.2734,
+   "n": 490,
+   "einheit": "F"
+  },
+  "KAUS|V2|hoechst": {
+   "bias": -0.8927,
+   "sd": 3.4534,
+   "n": 490,
+   "einheit": "F"
+  },
+  "KAUS|V2|tiefst": {
+   "bias": -2.364,
+   "sd": 3.9948,
+   "n": 490,
+   "einheit": "F"
+  },
+  "KBKF|V1|hoechst": {
+   "bias": 0.4926,
+   "sd": 3.0626,
+   "n": 486,
+   "einheit": "F"
+  },
+  "KBKF|V1|tiefst": {
+   "bias": -0.9449,
+   "sd": 2.602,
+   "n": 486,
+   "einheit": "F"
+  },
+  "KBKF|V2|hoechst": {
+   "bias": 0.4535,
+   "sd": 3.5534,
+   "n": 486,
+   "einheit": "F"
+  },
+  "KBKF|V2|tiefst": {
+   "bias": -2.0668,
+   "sd": 2.8863,
+   "n": 486,
+   "einheit": "F"
+  },
   "KDAL|V1|hoechst": {
-   "bias": -1.0243,
-   "sd": 3.0912,
+   "bias": -0.9883,
+   "sd": 3.118,
    "n": 490,
    "einheit": "F"
   },
   "KDAL|V1|tiefst": {
-   "bias": 1.1212,
-   "sd": 2.5498,
+   "bias": 1.4625,
+   "sd": 2.5492,
    "n": 490,
    "einheit": "F"
   },
@@ -94,6 +271,54 @@
   "KDAL|V2|tiefst": {
    "bias": -1.0955,
    "sd": 2.7848,
+   "n": 490,
+   "einheit": "F"
+  },
+  "KHOU|V1|hoechst": {
+   "bias": 0.0852,
+   "sd": 2.5203,
+   "n": 490,
+   "einheit": "F"
+  },
+  "KHOU|V1|tiefst": {
+   "bias": 1.6239,
+   "sd": 2.1312,
+   "n": 490,
+   "einheit": "F"
+  },
+  "KHOU|V2|hoechst": {
+   "bias": -0.0577,
+   "sd": 2.7159,
+   "n": 490,
+   "einheit": "F"
+  },
+  "KHOU|V2|tiefst": {
+   "bias": 0.2531,
+   "sd": 2.352,
+   "n": 490,
+   "einheit": "F"
+  },
+  "KLAX|V1|hoechst": {
+   "bias": -5.9677,
+   "sd": 4.2044,
+   "n": 490,
+   "einheit": "F"
+  },
+  "KLAX|V1|tiefst": {
+   "bias": 2.3434,
+   "sd": 1.6778,
+   "n": 490,
+   "einheit": "F"
+  },
+  "KLAX|V2|hoechst": {
+   "bias": -6.04,
+   "sd": 4.3315,
+   "n": 490,
+   "einheit": "F"
+  },
+  "KLAX|V2|tiefst": {
+   "bias": -1.4193,
+   "sd": 1.9002,
    "n": 490,
    "einheit": "F"
   },
@@ -193,6 +418,54 @@
    "n": 490,
    "einheit": "F"
   },
+  "KSFO|V1|hoechst": {
+   "bias": -5.1663,
+   "sd": 5.1571,
+   "n": 490,
+   "einheit": "F"
+  },
+  "KSFO|V1|tiefst": {
+   "bias": 0.94,
+   "sd": 2.1567,
+   "n": 490,
+   "einheit": "F"
+  },
+  "KSFO|V2|hoechst": {
+   "bias": -5.0502,
+   "sd": 5.1911,
+   "n": 490,
+   "einheit": "F"
+  },
+  "KSFO|V2|tiefst": {
+   "bias": -1.316,
+   "sd": 2.7967,
+   "n": 490,
+   "einheit": "F"
+  },
+  "LEMD|V1|hoechst": {
+   "bias": 0.4772,
+   "sd": 1.142,
+   "n": 490,
+   "einheit": "C"
+  },
+  "LEMD|V1|tiefst": {
+   "bias": -1.4663,
+   "sd": 1.4962,
+   "n": 490,
+   "einheit": "C"
+  },
+  "LEMD|V2|hoechst": {
+   "bias": 0.4167,
+   "sd": 1.3517,
+   "n": 490,
+   "einheit": "C"
+  },
+  "LEMD|V2|tiefst": {
+   "bias": -1.4612,
+   "sd": 1.5793,
+   "n": 490,
+   "einheit": "C"
+  },
   "LFPB|V1|hoechst": {
    "bias": 0.2556,
    "sd": 1.3124,
@@ -217,27 +490,51 @@
    "n": 490,
    "einheit": "C"
   },
-  "LFPG|V1|hoechst": {
-   "bias": 0.6406,
-   "sd": 1.3982,
+  "LIMC|V1|hoechst": {
+   "bias": 1.2523,
+   "sd": 1.2925,
    "n": 490,
    "einheit": "C"
   },
-  "LFPG|V1|tiefst": {
-   "bias": 0.8315,
-   "sd": 0.9327,
+  "LIMC|V1|tiefst": {
+   "bias": -0.5579,
+   "sd": 1.5532,
    "n": 490,
    "einheit": "C"
   },
-  "LFPG|V2|hoechst": {
-   "bias": 0.533,
-   "sd": 1.6094,
+  "LIMC|V2|hoechst": {
+   "bias": 1.179,
+   "sd": 1.4301,
    "n": 490,
    "einheit": "C"
   },
-  "LFPG|V2|tiefst": {
-   "bias": 0.8726,
-   "sd": 1.0624,
+  "LIMC|V2|tiefst": {
+   "bias": -0.5438,
+   "sd": 1.5286,
+   "n": 490,
+   "einheit": "C"
+  },
+  "LLBG|V1|hoechst": {
+   "bias": -0.4193,
+   "sd": 1.1849,
+   "n": 490,
+   "einheit": "C"
+  },
+  "LLBG|V1|tiefst": {
+   "bias": 0.2457,
+   "sd": 1.5631,
+   "n": 490,
+   "einheit": "C"
+  },
+  "LLBG|V2|hoechst": {
+   "bias": -0.526,
+   "sd": 1.2422,
+   "n": 490,
+   "einheit": "C"
+  },
+  "LLBG|V2|tiefst": {
+   "bias": 0.3097,
+   "sd": 1.5676,
    "n": 490,
    "einheit": "C"
   },
@@ -265,6 +562,78 @@
    "n": 490,
    "einheit": "C"
   },
+  "LTFM|V1|hoechst": {
+   "bias": -0.445,
+   "sd": 1.4485,
+   "n": 490,
+   "einheit": "C"
+  },
+  "LTFM|V1|tiefst": {
+   "bias": 1.508,
+   "sd": 1.2068,
+   "n": 490,
+   "einheit": "C"
+  },
+  "LTFM|V2|hoechst": {
+   "bias": -0.532,
+   "sd": 1.5322,
+   "n": 490,
+   "einheit": "C"
+  },
+  "LTFM|V2|tiefst": {
+   "bias": 1.5044,
+   "sd": 1.2691,
+   "n": 490,
+   "einheit": "C"
+  },
+  "MMMX|V1|hoechst": {
+   "bias": -0.4067,
+   "sd": 1.2009,
+   "n": 490,
+   "einheit": "C"
+  },
+  "MMMX|V1|tiefst": {
+   "bias": -0.9224,
+   "sd": 1.9041,
+   "n": 490,
+   "einheit": "C"
+  },
+  "MMMX|V2|hoechst": {
+   "bias": -0.4294,
+   "sd": 1.3181,
+   "n": 490,
+   "einheit": "C"
+  },
+  "MMMX|V2|tiefst": {
+   "bias": -0.9145,
+   "sd": 1.9299,
+   "n": 490,
+   "einheit": "C"
+  },
+  "MPMG|V1|hoechst": {
+   "bias": 1.2526,
+   "sd": 1.3007,
+   "n": 490,
+   "einheit": "C"
+  },
+  "MPMG|V1|tiefst": {
+   "bias": 0.8903,
+   "sd": 0.7559,
+   "n": 490,
+   "einheit": "C"
+  },
+  "MPMG|V2|hoechst": {
+   "bias": 1.3835,
+   "sd": 1.3528,
+   "n": 490,
+   "einheit": "C"
+  },
+  "MPMG|V2|tiefst": {
+   "bias": 0.9495,
+   "sd": 0.7826,
+   "n": 490,
+   "einheit": "C"
+  },
   "NZWN|V1|hoechst": {
    "bias": 1.158,
    "sd": 0.9482,
@@ -289,6 +658,126 @@
    "n": 490,
    "einheit": "C"
   },
+  "OEJN|V1|hoechst": {
+   "bias": 0.2237,
+   "sd": 1.2707,
+   "n": 490,
+   "einheit": "C"
+  },
+  "OEJN|V1|tiefst": {
+   "bias": 2.1707,
+   "sd": 0.9815,
+   "n": 490,
+   "einheit": "C"
+  },
+  "OEJN|V2|hoechst": {
+   "bias": 0.2073,
+   "sd": 1.3103,
+   "n": 490,
+   "einheit": "C"
+  },
+  "OEJN|V2|tiefst": {
+   "bias": 2.277,
+   "sd": 1.0122,
+   "n": 490,
+   "einheit": "C"
+  },
+  "OPKC|V1|hoechst": {
+   "bias": 0.2086,
+   "sd": 1.4427,
+   "n": 489,
+   "einheit": "C"
+  },
+  "OPKC|V1|tiefst": {
+   "bias": -0.2433,
+   "sd": 1.8409,
+   "n": 489,
+   "einheit": "C"
+  },
+  "OPKC|V2|hoechst": {
+   "bias": 0.2253,
+   "sd": 1.5808,
+   "n": 489,
+   "einheit": "C"
+  },
+  "OPKC|V2|tiefst": {
+   "bias": -0.2199,
+   "sd": 1.8553,
+   "n": 489,
+   "einheit": "C"
+  },
+  "RCSS|V1|hoechst": {
+   "bias": 0.7823,
+   "sd": 1.6185,
+   "n": 457,
+   "einheit": "C"
+  },
+  "RCSS|V1|tiefst": {
+   "bias": 0.2279,
+   "sd": 1.2646,
+   "n": 457,
+   "einheit": "C"
+  },
+  "RCSS|V2|hoechst": {
+   "bias": 0.7875,
+   "sd": 1.716,
+   "n": 457,
+   "einheit": "C"
+  },
+  "RCSS|V2|tiefst": {
+   "bias": 0.2093,
+   "sd": 1.3178,
+   "n": 457,
+   "einheit": "C"
+  },
+  "RJTT|V1|hoechst": {
+   "bias": 0.2051,
+   "sd": 1.2265,
+   "n": 490,
+   "einheit": "C"
+  },
+  "RJTT|V1|tiefst": {
+   "bias": 0.8573,
+   "sd": 1.0365,
+   "n": 490,
+   "einheit": "C"
+  },
+  "RJTT|V2|hoechst": {
+   "bias": 0.2297,
+   "sd": 1.522,
+   "n": 490,
+   "einheit": "C"
+  },
+  "RJTT|V2|tiefst": {
+   "bias": 0.9362,
+   "sd": 1.1102,
+   "n": 490,
+   "einheit": "C"
+  },
+  "RKPK|V1|hoechst": {
+   "bias": -0.5581,
+   "sd": 1.4156,
+   "n": 490,
+   "einheit": "C"
+  },
+  "RKPK|V1|tiefst": {
+   "bias": -0.3959,
+   "sd": 1.0995,
+   "n": 490,
+   "einheit": "C"
+  },
+  "RKPK|V2|hoechst": {
+   "bias": -0.5739,
+   "sd": 1.5772,
+   "n": 490,
+   "einheit": "C"
+  },
+  "RKPK|V2|tiefst": {
+   "bias": -0.3365,
+   "sd": 1.1975,
+   "n": 490,
+   "einheit": "C"
+  },
   "RKSI|V1|hoechst": {
    "bias": 2.879,
    "sd": 1.7947,
@@ -310,6 +799,30 @@
   "RKSI|V2|tiefst": {
    "bias": 0.0598,
    "sd": 1.2605,
+   "n": 490,
+   "einheit": "C"
+  },
+  "RPLL|V1|hoechst": {
+   "bias": 1.6785,
+   "sd": 1.1792,
+   "n": 490,
+   "einheit": "C"
+  },
+  "RPLL|V1|tiefst": {
+   "bias": 0.4106,
+   "sd": 0.9465,
+   "n": 490,
+   "einheit": "C"
+  },
+  "RPLL|V2|hoechst": {
+   "bias": 1.6683,
+   "sd": 1.2445,
+   "n": 490,
+   "einheit": "C"
+  },
+  "RPLL|V2|tiefst": {
+   "bias": 0.4336,
+   "sd": 0.967,
    "n": 490,
    "einheit": "C"
   },
@@ -361,6 +874,30 @@
    "n": 490,
    "einheit": "C"
   },
+  "UUWW|V1|hoechst": {
+   "bias": 0.7968,
+   "sd": 1.5788,
+   "n": 490,
+   "einheit": "C"
+  },
+  "UUWW|V1|tiefst": {
+   "bias": 0.5163,
+   "sd": 1.3214,
+   "n": 490,
+   "einheit": "C"
+  },
+  "UUWW|V2|hoechst": {
+   "bias": 0.6983,
+   "sd": 1.7615,
+   "n": 490,
+   "einheit": "C"
+  },
+  "UUWW|V2|tiefst": {
+   "bias": 0.5633,
+   "sd": 1.3847,
+   "n": 490,
+   "einheit": "C"
+  },
   "VILK|V1|hoechst": {
    "bias": -1.5337,
    "sd": 1.8492,
@@ -382,6 +919,246 @@
   "VILK|V2|tiefst": {
    "bias": -0.99,
    "sd": 1.8179,
+   "n": 490,
+   "einheit": "C"
+  },
+  "WMKK|V1|hoechst": {
+   "bias": 1.3269,
+   "sd": 1.4866,
+   "n": 490,
+   "einheit": "C"
+  },
+  "WMKK|V1|tiefst": {
+   "bias": 0.9424,
+   "sd": 1.0273,
+   "n": 490,
+   "einheit": "C"
+  },
+  "WMKK|V2|hoechst": {
+   "bias": 1.2709,
+   "sd": 1.5284,
+   "n": 490,
+   "einheit": "C"
+  },
+  "WMKK|V2|tiefst": {
+   "bias": 0.9791,
+   "sd": 1.0852,
+   "n": 490,
+   "einheit": "C"
+  },
+  "WSSS|V1|hoechst": {
+   "bias": 1.379,
+   "sd": 1.0894,
+   "n": 490,
+   "einheit": "C"
+  },
+  "WSSS|V1|tiefst": {
+   "bias": -0.0913,
+   "sd": 1.1098,
+   "n": 490,
+   "einheit": "C"
+  },
+  "WSSS|V2|hoechst": {
+   "bias": 1.3158,
+   "sd": 1.1236,
+   "n": 490,
+   "einheit": "C"
+  },
+  "WSSS|V2|tiefst": {
+   "bias": -0.1094,
+   "sd": 1.1977,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZBAA|V1|hoechst": {
+   "bias": -0.237,
+   "sd": 2.0363,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZBAA|V1|tiefst": {
+   "bias": -1.9502,
+   "sd": 2.1349,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZBAA|V2|hoechst": {
+   "bias": -0.3569,
+   "sd": 2.2621,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZBAA|V2|tiefst": {
+   "bias": -2.0045,
+   "sd": 2.159,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZGGG|V1|hoechst": {
+   "bias": 1.346,
+   "sd": 1.8797,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZGGG|V1|tiefst": {
+   "bias": 0.91,
+   "sd": 1.2854,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZGGG|V2|hoechst": {
+   "bias": 1.3811,
+   "sd": 2.0108,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZGGG|V2|tiefst": {
+   "bias": 0.9137,
+   "sd": 1.3567,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZGSZ|V1|hoechst": {
+   "bias": -0.2006,
+   "sd": 1.2805,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZGSZ|V1|tiefst": {
+   "bias": 0.3742,
+   "sd": 1.2167,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZGSZ|V2|hoechst": {
+   "bias": -0.1822,
+   "sd": 1.3798,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZGSZ|V2|tiefst": {
+   "bias": 0.3928,
+   "sd": 1.3338,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZHHH|V1|hoechst": {
+   "bias": 0.3569,
+   "sd": 1.6136,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZHHH|V1|tiefst": {
+   "bias": 0.5274,
+   "sd": 1.3052,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZHHH|V2|hoechst": {
+   "bias": 0.2915,
+   "sd": 1.8095,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZHHH|V2|tiefst": {
+   "bias": 0.4909,
+   "sd": 1.4204,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZSPD|V1|hoechst": {
+   "bias": 1.3052,
+   "sd": 1.3749,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZSPD|V1|tiefst": {
+   "bias": 0.257,
+   "sd": 1.0072,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZSPD|V2|hoechst": {
+   "bias": 1.2481,
+   "sd": 1.5927,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZSPD|V2|tiefst": {
+   "bias": 0.2414,
+   "sd": 1.0717,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZSQD|V1|hoechst": {
+   "bias": -0.2588,
+   "sd": 1.7716,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZSQD|V1|tiefst": {
+   "bias": -0.2412,
+   "sd": 1.2659,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZSQD|V2|hoechst": {
+   "bias": -0.3088,
+   "sd": 1.8394,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZSQD|V2|tiefst": {
+   "bias": -0.2594,
+   "sd": 1.3232,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZUCK|V1|hoechst": {
+   "bias": 1.4376,
+   "sd": 1.838,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZUCK|V1|tiefst": {
+   "bias": 1.1519,
+   "sd": 1.3159,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZUCK|V2|hoechst": {
+   "bias": 1.323,
+   "sd": 2.0452,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZUCK|V2|tiefst": {
+   "bias": 1.0943,
+   "sd": 1.3684,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZUUU|V1|hoechst": {
+   "bias": 0.7116,
+   "sd": 2.0682,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZUUU|V1|tiefst": {
+   "bias": 0.5887,
+   "sd": 1.2657,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZUUU|V2|hoechst": {
+   "bias": 0.5427,
+   "sd": 2.2602,
+   "n": 490,
+   "einheit": "C"
+  },
+  "ZUUU|V2|tiefst": {
+   "bias": 0.5312,
+   "sd": 1.3333,
    "n": 490,
    "einheit": "C"
   }

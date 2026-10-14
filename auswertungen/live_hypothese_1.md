@@ -12,14 +12,14 @@ Nein-Wetten auf einzelne Temperatur-Buckets, entschieden 18:00 Ortszeit zwei Tag
 
 ## Festgelegte Regeln
 
-**Grundgesamtheit.** Alle Events „Höchst-/Tiefsttemperatur“ im Protokoll, deren Station in `auswertungen/live_bias.json` vorkommt (die 16 Stationen der 15 Rückrechnungs-Städte; alle anderen Städte werden nicht gewertet), mit Zieltag **ab 2026-10-16** (Entscheidung nach der Festschreibung). Jedes Event zählt höchstens einmal je Variante.
+**Grundgesamtheit.** Alle Events „Höchst-/Tiefsttemperatur“ im Protokoll, deren Station in `auswertungen/live_bias.json` vorkommt (alle Stationen mit mindestens 300 Tagen Daten je Vorlauf × Art in 2024–2025; ausgeschlossene Stationen stehen mit Grund unter `ausgeschlossen`), mit Zieltag **ab 2026-10-16** und einer Entscheidungszeit `Td` nicht vor dem Beginn in `auswertungen/live_start.txt` (UTC; Zeitpunkt, ab dem das Protokoll mit den korrigierten Stationskoordinaten läuft; wird beim Einspielen der Korrektur eingetragen und danach nicht mehr geändert). Jedes Event zählt höchstens einmal je Variante.
 
 **Entscheidungszeitpunkt `Td`.** 18:00 Ortszeit der Station am Tag (Zieltag − 2) (Hauptvariante) bzw. (Zieltag − 1) (Vergleich Vorlauf 1).
 
 **Entscheidungs-Schnappschuss.** Der erste Protokoll-Lauf (`maerkte_HHMM`, UTC-Startzeit `HHMM` im Tagesordner) mit Startzeit ≥ `Td`, höchstens 60 Minuten nach `Td`. Gibt es keinen, zählt das Event für diese Variante als „Lücke“ (wird gezählt und berichtet, nicht ersetzt). Fehlt der Markt dort (nicht im Schnappschuss), entfällt das Event ebenso.
 
 **Wahrscheinlichkeit.**
-1. Ensemble-Mitglieder: je (Stadt, Art, Zieltag, Modell) die Zeile aus `ensemble_*.csv.gz` mit dem jüngsten `empfangen_utc` ≤ Startzeit des Entscheidungs-Schnappschusses (kein Blick in die Zukunft). Alle Modelle des Protokolls (`ecmwf_ifs025`, `gfs025`, `icon_seamless`, `gem_global`), unabhängig von `lauf_sicher`. Mindestens 2 Modelle, sonst entfällt das Event.
+1. Ensemble-Mitglieder: je (Stadt, Art, Zieltag, Modell) die Zeile aus `ensemble_*.csv.gz` mit dem jüngsten `empfangen_utc` ≤ Startzeit des Entscheidungs-Schnappschusses (kein Blick in die Zukunft) und ≥ Beginn aus `live_start.txt` (Abrufe mit den früheren, falschen Koordinaten zählen nicht). Alle Modelle des Protokolls (`ecmwf_ifs025`, `gfs025`, `icon_seamless`, `gem_global`), unabhängig von `lauf_sicher`. Mindestens 2 Modelle, sonst entfällt das Event.
 2. Alle Mitglieder gepoolt, gleiches Gewicht je Mitglied (wie `bot/ensemble.wahrscheinlichkeiten`).
 3. °C → °F für °F-Märkte; **Stationskorrektur:** zu jedem Mitgliedswert wird der Bias addiert, d. h. der Mittelwert der Residuen (Messwert − Vorhersage) 2024–2025 (März–Oktober) der Rückrechnung für Station × Vorlauf (V2 für die Hauptvariante, V1 für den Vergleich) × Art, in Markteinheit (`auswertungen/live_bias.json`, mit dem Einspielen dieser Datei festgeschrieben). Nur der Bias: die Streuung bleibt die des Ensembles (die Residuenstreuung der Rückrechnung gehört zu einer einzelnen deterministischen Vorhersage und würde die Ensemble-Streuung doppelt zählen).
 4. Rundung je Station aus dem Stamm (`rundung`: kaufmännisch, HKO abschneidend), wie `bot/rueckrechnung.bucket_p` (Toleranz 1e-9 für exakte x,5); Wahrscheinlichkeit = Anteil der Mitglieder im Bucket, danach auf [0,005; 0,995] begrenzt.
@@ -37,7 +37,7 @@ Nein-Wetten auf einzelne Temperatur-Buckets, entschieden 18:00 Ortszeit zwei Tag
 - **Hauptvariante:** Nein-Wetten, Vorlauf 2. **Stichprobe = die ersten 200 Hauptwetten nach `Td`** (bei Gleichstand nach Event-Slug, Bucket-Index); sie wird erst ausgewertet, wenn alle 200 aufgelöst sind. Erst dann, **einmal**. Bis dahin gibt das Auswerteskript nur Zählstände aus (Wetten, aufgelöste Wetten, Lücken, Ausfälle), **keine** Gewinne, Quoten oder Brier-Werte. Kein Zwischenstand-Tuning; kein Ändern von Schwelle, Gewichten, Korrektur, Zeitpunkt oder Auswahl.
 - **Hälften nach Zeit:** erste 100 und zweite 100 der Stichprobe (nach `Td`).
 - **Messlatte: null nach Kosten.** Die Hypothese gilt als **bestätigt**, wenn (1) Gewinn je Wette über alle 200 > 0, (2) die Summe ohne die 3 besten Wetten > 0 und (3) die Summe in **jeder** der beiden Hälften > 0. Sonst **nicht bestätigt**. Berichtet werden zusätzlich Trefferquote, Summe, Brier-Score (Modell gegen Mitte des Ja-Preises, alle Buckets der Hauptwetten-Events) und die Preissumme der Events als Beschreibung (kein Filter).
-- **Zum Vergleich, nicht Entscheidungsgrundlage:** Ja-Wetten Vorlauf 2, Nein-Wetten Vorlauf 1, Ja-Wetten Vorlauf 1, nach derselben Regel, im selben Zeitraum (Zieltage bis zum `Td` der 200. Hauptwette), ohne Mindestzahl.
+- **Zum Vergleich, nicht Entscheidungsgrundlage:** Ja-Wetten Vorlauf 2, Nein-Wetten Vorlauf 1, Ja-Wetten Vorlauf 1, nach derselben Regel, im selben Zeitraum (Zieltage bis zum `Td` der 200. Hauptwette), ohne Mindestzahl. Dazu zwei weitere Vergleichszeilen (Vorlauf 2): (a) **Nein mit aufgeweitetem Ensemble:** dieselbe Regel, aber die Streuung der Mitglieder um ihr Mittel wird auf die Residuenstreuung (`sd` in `live_bias.json`, Station × Vorlauf × Art, Markteinheit) aufgeweitet, falls sie kleiner ist; danach Bias wie in der Hauptvariante. (b) **Blind-Nein:** Nein auf jeden Bucket mit Ja-Ask ≤ 0,10 (Nein-Ask = 1 − bester Ja-Bid), ohne Modell, ohne Kantenschwelle, ohne Begrenzung je Event, mit derselben Gebühr- und Tiefenregel. Sie zeigt, was die reine Preisstruktur ohne Wetterwissen bringt.
 
 ## Vorab benannte Schwächen
 
@@ -48,3 +48,14 @@ Nein-Wetten auf einzelne Temperatur-Buckets, entschieden 18:00 Ortszeit zwei Tag
 - Ein Schnappschuss je Entscheidung; der Zeitplan des Protokolls hat Lücken (siehe `wissen/wiki/werkzeuge/GitHub-Actions-Workflow.md`); Ereignisse ohne Schnappschuss innerhalb von 60 Minuten entfallen und können das Ergebnis verzerren (werden gezählt).
 - Die Tiefe an der Spitze sagt nichts über Preisbewegung durch die eigene Order und über Ausführungsrisiken; Maker-Rebates sind nicht eingerechnet.
 - Auflösungsabweichungen zwischen METAR und Polymarket-Gewinner (kleiner einstelliger Prozentbereich) sind Rauschen; es zählt der Gewinner.
+
+## Änderungen vor Datenbeginn (2026-10-14)
+
+Nachträglich zur ersten Fassung (Commit `e94b608`), vor Beginn der Auswertungsdaten (keine Wette dieser Hypothese war ausgewertet; es gab nicht einmal eine Hauptwette): Das Original bleibt im Verlauf erhalten, diese Fassung steht in einem eigenen Commit darüber.
+
+1. **Falsche Koordinaten.** Die Stationsprüfung (`wissen/wiki/werkzeuge/Stationsprüfung.md`) fand in `bot/stationen.py` Stadtkoordinaten statt Flughafenkoordinaten, vor allem bei Qingdao (39,6 km daneben; der Markt löst am Flughafen Jiaodong auf), Chongqing (26,9 km), Wuhan (19,5 km), Chengdu (11,9 km), Karachi (6,7 km), dazu Jeddah, Panama-Stadt, Shanghai, Kuala Lumpur (3–5 km) und einige 1–2-km-Fälle. Die Koordinaten sind korrigiert (Quelle: `aviationweather.gov` stationinfo). Folge: `live_bias.json` ist mit den korrigierten Koordinaten neu berechnet (alle Prognosen neu abgerufen), und Ensemble-Abrufe aus der Zeit mit den alten Koordinaten zählen nicht (Beginn in `live_start.txt`).
+2. **Erweiterung auf alle Städte** mit genug Daten (statt nur der 15 der Rückrechnung); Stationen ohne genug Daten sind ausgeschlossen und aufgelistet (`live_bias.json`, `ausgeschlossen`). Hong Kong entfällt (Auflösung durch das Observatorium, keine METAR-Reihe).
+3. **Zusätzliche Vergleichszeilen** (nicht Entscheidungsgrundlage): aufgeweitetes Ensemble und Blind-Nein (siehe oben).
+4. **Klarstellung der Reihenfolge:** Die zwei größten Kanten werden zuerst gewählt, danach die Tiefe geprüft (so schon im Auswerteskript).
+
+Unverändert: Hypothese, Schwelle 0,10, Vorlauf 2, Stichprobe 200, Hälften, Kriterien, Messlatte null.
