@@ -1,5 +1,5 @@
 {
- "aufloesung_letzte": "2026-10-25T23:11:30+00:00",
+ "aufloesung_letzte": "2026-10-26T15:08:30+00:00",
  "aufloesung_offen": {
   "highest-temperature-in-hong-kong-on-october-10-2026": "2026-10-10",
   "highest-temperature-in-hong-kong-on-october-11-2026": "2026-10-11",
@@ -14,6 +14,9 @@
   "highest-temperature-in-hong-kong-on-october-20-2026": "2026-10-20",
   "highest-temperature-in-hong-kong-on-october-21-2026": "2026-10-21",
   "highest-temperature-in-hong-kong-on-october-22-2026": "2026-10-22",
+  "highest-temperature-in-hong-kong-on-october-23-2026": "2026-10-23",
+  "highest-temperature-in-hong-kong-on-october-24-2026": "2026-10-24",
+  "highest-temperature-in-hong-kong-on-october-25-2026": "2026-10-25",
   "highest-temperature-in-hong-kong-on-october-7-2026": "2026-10-07",
   "highest-temperature-in-hong-kong-on-october-8-2026": "2026-10-08",
   "highest-temperature-in-hong-kong-on-october-9-2026": "2026-10-09",
@@ -30,16 +33,19 @@
   "lowest-temperature-in-hong-kong-on-october-20-2026": "2026-10-20",
   "lowest-temperature-in-hong-kong-on-october-21-2026": "2026-10-21",
   "lowest-temperature-in-hong-kong-on-october-22-2026": "2026-10-22",
+  "lowest-temperature-in-hong-kong-on-october-23-2026": "2026-10-23",
+  "lowest-temperature-in-hong-kong-on-october-24-2026": "2026-10-24",
+  "lowest-temperature-in-hong-kong-on-october-25-2026": "2026-10-25",
   "lowest-temperature-in-hong-kong-on-october-7-2026": "2026-10-07",
   "lowest-temperature-in-hong-kong-on-october-8-2026": "2026-10-08",
   "lowest-temperature-in-hong-kong-on-october-9-2026": "2026-10-09"
  },
- "letzter_start": "2026-10-26T07:43:53+00:00",
+ "letzter_start": "2026-10-26T15:08:30+00:00",
  "modelle": {
-  "ecmwf_ifs025": "2026-10-25T12:00Z",
-  "gem_global": "2026-10-25T12:00Z",
-  "gfs025": "2026-10-26T00:00Z",
-  "icon_seamless": "2026-10-26T06:00Z~"
+  "ecmwf_ifs025": "2026-10-26T00:00Z",
+  "gem_global": "2026-10-26T00:00Z",
+  "gfs025": "2026-10-26T06:00Z",
+  "icon_seamless": "2026-10-26T12:00Z~"
  },
  "versuche": {}
 }
