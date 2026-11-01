@@ -1,3 +1,4 @@
 lauf_start_utc,lauf_ende_utc,dauer_s,luecke_min,status,events,maerkte,neue_stammzeilen,ensemble_modelle_neu,ensemble_stationen_ok,ensemble_fehler,om_anfragen,om_gewicht,om_gewicht_heute,om_meta_anfragen,wahrscheinlichkeiten,aufloesung_neu,aufloesung_abweichungen,aufloesung_offen,daten_mb,git_pack_mb,fehler
 2026-11-01T05:53:28Z,2026-11-01T05:55:22Z,114.2,372.7,OK,332,2653,2653,ecmwf_ifs025+gfs025+icon_seamless,49,0,49,147,147,5,2607,,,,16.686,15.76,
 2026-11-01T13:13:23Z,2026-11-01T13:15:28Z,125.1,439.9,OK,376,3158,901,ecmwf_ifs025+gfs025+icon_seamless+gem_global,49,0,49,196,343,5,3102,86,0,46,16.882,16.09,
+2026-11-01T18:32:23Z,2026-11-01T18:34:15Z,112.2,319.0,OK,349,2861,176,ecmwf_ifs025+gfs025+icon_seamless+gem_global,49,0,49,196,539,5,2805,,,,17.004,16.27,
