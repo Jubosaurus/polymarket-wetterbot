@@ -56,12 +56,12 @@
   "lowest-temperature-in-hong-kong-on-october-8-2026": "2026-10-08",
   "lowest-temperature-in-hong-kong-on-october-9-2026": "2026-10-09"
  },
- "letzter_start": "2026-11-03T23:14:57+00:00",
+ "letzter_start": "2026-11-04T03:12:33+00:00",
  "modelle": {
-  "ecmwf_ifs025": "2026-11-03T12:00Z",
+  "ecmwf_ifs025": "2026-11-03T18:00Z",
   "gem_global": "2026-11-03T12:00Z",
-  "gfs025": "2026-11-03T12:00Z",
-  "icon_seamless": "2026-11-03T18:00Z~"
+  "gfs025": "2026-11-03T18:00Z",
+  "icon_seamless": "2026-11-04T00:00Z~"
  },
  "versuche": {}
 }
