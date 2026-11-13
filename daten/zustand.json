@@ -1,5 +1,5 @@
 {
- "aufloesung_letzte": "2026-11-13T07:51:16+00:00",
+ "aufloesung_letzte": "2026-11-13T22:08:23+00:00",
  "aufloesung_offen": {
   "highest-temperature-in-hong-kong-on-november-1-2026": "2026-11-01",
   "highest-temperature-in-hong-kong-on-november-10-2026": "2026-11-10",
@@ -76,12 +76,12 @@
   "lowest-temperature-in-hong-kong-on-october-8-2026": "2026-10-08",
   "lowest-temperature-in-hong-kong-on-october-9-2026": "2026-10-09"
  },
- "letzter_start": "2026-11-13T16:13:08+00:00",
+ "letzter_start": "2026-11-13T22:08:23+00:00",
  "modelle": {
   "ecmwf_ifs025": "2026-11-13T06:00Z",
-  "gem_global": "2026-11-13T00:00Z",
-  "gfs025": "2026-11-13T06:00Z",
-  "icon_seamless": "2026-11-13T12:00Z~"
+  "gem_global": "2026-11-13T12:00Z",
+  "gfs025": "2026-11-13T12:00Z",
+  "icon_seamless": "2026-11-13T18:00Z~"
  },
  "versuche": {}
 }
